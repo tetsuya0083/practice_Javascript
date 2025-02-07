@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // javascript code...
+    // 주석
+    /*
+    주석
+    주석
+    주석
+    */
+  </script>
+
+<!--  내부 스크립트 (Internal script)-->
+  <script>
+    document.write("Internal script");
+  </script>
+
+<!--  외부 스크립트 (External script)-->
+  <script src="../js/JSSample.js"></script>
+
+  <script>
+    // let arrScore = [10, 20, 30, 40, 50];
+    //.js 파일에 선언한 것과 차이가 있는지?
+    for(let i = 0; i < 5; i++)
+    {
+      console.log("배열: " + arrScore[i]);
+    }
+
+    // object literal
+    let score = {
+      korean: 10,
+      english: 20,
+      math: 30,
+      science: 40
+    };
+    console.log("과학 점수: " + score.science);
+
+    ternaryOperation();
+    ternaryOperationTest();
+    addNum();
+    getResult1();
+    getResult2(4);
+    getResult2(5);
+
+    getResult3(6);
+    let getNum = getResult3(9);
+    console.log(getNum);
+
+  </script>
+
+  <h1>학생 성적</h1>
+  <p id="math"> Math: </p>
+  <script>
+    displayMathScore();
+  </script>
+
+
+</body>
+</html>
