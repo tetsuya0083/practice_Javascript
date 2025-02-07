@@ -40,16 +40,47 @@
     };
     console.log("과학 점수: " + score.science);
 
-    ternaryOperation();
-    ternaryOperationTest();
-    addNum();
-    getResult1();
-    getResult2(4);
-    getResult2(5);
+    // ternaryOperation();
+    // ternaryOperationTest();
+    // addNum();
+    // getResult1();
+    // getResult2(4);
+    // getResult2(5);
+    //
+    // getResult3(6);
+    // let getNum = getResult3(9);
+    // console.log(getNum);
 
-    getResult3(6);
-    let getNum = getResult3(9);
-    console.log(getNum);
+    let dayOfTheWeek = "금요일"
+    switch (dayOfTheWeek)
+    {
+      case "월요일":
+        console.log("Start of the work week.");
+        break;
+      case "금요일":
+        console.log("Start of the Almost weekend.");
+        break;
+      default:
+        console.log("Midweek");
+        break;
+    }
+
+    let temperature = -1;
+    if (temperature >= 30) {
+      console.log("정말 더운 날씨 입니다.");
+
+    } else if( temperature >= 25) {
+      console.log("더운 날씨 입니다.");
+
+    } else if( temperature >= 15) {
+      console.log("서늘한 날씨 입니다.");
+
+    } else if ( temperature >= 0) {
+      console.log("시원한 날씨 입니다.");
+
+    } else {
+      console.log("정말 추운 날씨입니다.");
+    }
 
   </script>
 
