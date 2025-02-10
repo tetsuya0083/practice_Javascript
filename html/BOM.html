@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+  <button onclick="printInfo()">window 객체 속성</button>
+  <script>
+    function printInfo() {
+      console.log('웹 브라우저의 너비: ' + window.innerWidth);
+      console.log('웹 브라우저의 높이: ' + window.innerHeight);
+      console.log('웹 브라우저 창의 너비: ' + window.outerWidth);
+      console.log('웹 브라우저 창의 높이: ' + window.outerHeight);
+      console.log('웹 브라우저 창 위쪽 면과 모니터 사이의 간격: ' + window.screenTop + '/' + window.screenY);
+      console.log('웹 브라우저 창 왼쪽 면과 모니터 사이의 간격: ' + window.screenLeft + '/' + window.screenX);
+      console.log('웹 브라우저 창의 스크롤 가로 위치: ' + window.scrollX);
+      console.log('웹 브우저 창의 스크롤 세로 위치: ' + window.scrollY);
+    }
+  </script>
+
+
+  <button onclick="popup()">팝업</button>
+
+  <script>
+    function popup() {
+      window.open('popup.html', '팝업', 'width=200, height=100');
+    }
+
+    // console.log("시작!");
+    // setTimeout(function(){
+    //   console.log("3초 후 실행됨!");
+    //
+    // }, 3000);
+    // setTimeout( () => {
+    //   console.log("2초 후 실행됨!");
+    // }, 2900);
+    //
+    // console.log("끝!");
+    //
+    // let count = 1;
+    // const intervalId = setInterval(function () {
+    //   console.log(`5초마다 실행됨! (${count}번쨰)`);
+    //   count++;
+    //
+    //   if (count > 3 ){
+    //     clearInterval(intervalId);
+    //     console.log("반복종료!");
+    //   }
+    // }, 5000);
+
+    function countDownTimer() {
+      setTimeout(function (){
+        console.log("count down start");
+
+        let sec = 10;
+        const intervalId = setInterval(function () {
+          console.log(`1초마다 실행됨! (${sec})초)`);
+          sec--;
+
+          if (sec < 1) {
+            clearInterval(intervalId);
+            console.log("count down end");
+          }
+        }, 1000);
+      }, 1000);
+    }
+    countDownTimer();
+
+  </script>
+
+
+
+
+
+</body>
+</html>

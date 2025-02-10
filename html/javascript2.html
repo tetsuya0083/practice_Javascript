@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+  <script>
+    let i = 0;
+    while ( i <= 60 ){
+      if (i % 3 === 0){
+        console.log(i);
+      }
+      i++;
+    }
+
+    // 윤년 계산
+    let leapYear = 2000;
+    while( leapYear <= 2030) {
+
+      if (leapYear % 4 === 0 && leapYear % 100 !== 0 || leapYear % 400 === 0) {
+        console.log(`${leapYear}년은 윤년입니다.`);
+      }
+      leapYear++;
+    }
+
+
+    let arrFruits = [`apple`, `banana`, `melon`];
+    for (let i = 0; i < arrFruits.length; i++){
+      console.log(`${arrFruits[i]}`);
+    }
+    //for in 문법(add in ES6)
+    for (let index in arrFruits){
+      console.log(index + ": " + arrFruits[index]);
+    }
+
+    for (let i = 1; i <= 10; i++) {
+      if (i % 2 === 1) {
+        continue; // 홀수일 때 건너뛰기
+      }
+      console.log(i); // 짝수만 출력
+    }
+
+    // continue 문을 제거하고,
+    // if 조건문을 수정하는 형태로 작성하는 것이 가독성이 좋다.
+    for (let i = 1; i <= 10; i++) {
+      if (i % 2 === 0) {
+        console.log(i);
+      }
+    }
+
+
+
+  </script>
+
+</body>
+</html>
