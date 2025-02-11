@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>move box</title>
+  <link rel="stylesheet" href="../css/mystyle.css">
+
+</head>
+<body>
+
+<!--  박스를 그린다.-->
+  <div class="clsBox"></div>
+
+<script>
+  // 박스 요소 가져오기
+  var box = document.querySelector(".clsBox");
+  var moveAmount = 20; // 이동 거리 (20px) 셋팅
+
+  // 키보드 이벤트 리스너 추가
+  document.addEventListener("keydown", function(event) {
+    // 현재 위치를 parseInt()를 사용하여 정수로 변환하여 받는다.
+    var top = parseInt(window.getComputedStyle(box).top);
+    var left = parseInt(window.getComputedStyle(box).left);
+
+    // 방향키에 따라 moveAmount만큼 이동하고 색을 바꾼다.
+    if (event.key === "ArrowUp") {
+      box.style.top = (top - moveAmount) + "px";
+      box.style.backgroundColor = "red";
+    } else if (event.key === "ArrowDown") {
+      box.style.top = (top + moveAmount) + "px";
+      box.style.backgroundColor = "blue";
+    } else if (event.key === "ArrowLeft") {
+      box.style.left = (left - moveAmount) + "px";
+      box.style.backgroundColor = "yellow";
+    } else if (event.key === "ArrowRight") {
+      box.style.left = (left + moveAmount) + "px";
+      box.style.backgroundColor = "green";
+    }
+  });
+</script>
+
+</body>
+</html>

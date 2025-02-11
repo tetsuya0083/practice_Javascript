@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>event</title>
+</head>
+<body>
+<!--인라인 방식-->
+  <button id="btn1" onclick="clickEvent()">버튼1</button>
+
+  <script>
+    function clickEvent() {
+      alert("click1");
+    }
+  </script>
+
+<!--프로퍼티 리스너 방식-->
+  <button id="btn2">버튼2</button>
+  <script>
+    //const btnEl = document.querySelector("button");
+    const btnEl = document.getElementById("btn2");
+    btnEl.onclick = function() {
+      alert('click2');
+    }
+  </script>
+
+<!--이벤트 등록 메서드-->
+  <button id="btn3">버튼3</button>
+  <script>
+    const btnEl2 = document.getElementById("btn3");
+    btnEl2.addEventListener("click", function() {
+      alert("click3");
+    });
+  </script>
+
+<!--  이벤트 객체와 this-->
+  <button id="btn4">버튼4</button>
+  <script>
+    const btnEl3 = document.getElementById("btn4");
+    btnEl3.addEventListener("click", function(event) {
+      console.log(event);
+    });
+  </script>
+
+  <p>text-1</p>
+  <p>text-2</p>
+  <p>text-3</p>
+  <script>
+    const pEls = document.querySelectorAll("p");
+
+    pEls.forEach((el) => {
+      el.addEventListener("click", function() {
+        console.log(this);
+      });
+    });
+  </script>
+
+  <input type="text" id="messageInput" placeholder="메시지를 입력 후 Enter!" />
+  <p id="messageOutput"></p>
+
+  <script>
+    document.getElementById("messageInput").addEventListener("keydown", function(event) {
+      // console.log(event.key);
+      if (event.key === "Enter") { // Enter 키가 눌렸는지 확인
+        document.getElementById("messageOutput").textContent = `입력된 메시지: ${this.value}`;
+        this.value = ""; // 입력창 초기화
+      }
+    });
+  </script>
+
+
+</body>
+</html>

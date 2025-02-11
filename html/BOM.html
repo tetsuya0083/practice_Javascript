@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <style>
+    body {
+      width: 3000px;
+      height: 3000px;
+    }
+  </style>
 </head>
 <body>
-
   <button onclick="printInfo()">window 객체 속성</button>
   <script>
     function printInfo() {
@@ -25,7 +30,7 @@
 
   <script>
     function popup() {
-      window.open('popup.html', '팝업', 'width=200, height=100');
+      window.open('javascript.html', '팝업', 'width=200, height=100');
     }
 
     // console.log("시작!");
@@ -67,6 +72,11 @@
       }, 1000);
     }
     countDownTimer();
+
+    // window.scrollTo(100, 200);
+    // window.scrollBy(100, 200);
+    window.scrollTo({left:100, top:200});
+    // window.scrollBy({left:100, top:200});
 
   </script>
 

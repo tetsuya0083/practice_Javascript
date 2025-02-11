@@ -1,0 +1,8 @@
+.clsBox {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute; /* 위치 이동을 위해*/
+  top: 50px; /* 초기 위치 */
+  left: 50px;
+}

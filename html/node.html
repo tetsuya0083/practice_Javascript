@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document Object Model</title>
+
+  <style>
+    .active {
+      color: red;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .red-color {
+      color: red;
+    }
+    .fz40 {
+      font-size: 40px;
+    }
+
+  </style>
+
+</head>
+<body>
+<!--  <h1 id="title">title</h1>-->
+<!--  <p class="text">text-1</p>-->
+<!--  <p class="text">text-2</p>-->
+
+<!--  <div class="box-1">-->
+<!--    <p class="cs-text">cs-text-1</p>-->
+<!--    <p class="cs-text">cs-text-2</p>-->
+<!--  </div>-->
+<!--  <div class="box-2">-->
+<!--    <p class="cs-text1">cs-text-3</p>-->
+<!--    <p class="cs-text2">cs-text-4</p>-->
+<!--  </div>-->
+
+<!--  <p id="myParagraph">Hello, <span style="display:none;">JavaScript!</span></p>-->
+
+  <p id="style-text">스타일 문자열</p>
+
+  <p class="active">text</p>
+  <p id="text">text</p>
+
+  <button data-cnt="10">가방 구매</button>
+  <button data-cnt="0">신발 구매</button>
+
+  <ul>
+    <li data-colorfff="red">빨강</li>
+    <li data-colorfff="blue">파랑</li>
+    <li data-colorfff="green">초록</li>
+  </ul>
+
+  <a href="https://www.example.com">예시 링크</a>
+
+  <script>
+    // id가 title인 요소를 찾아 콘솔에 출력하기
+    const el = document.getElementById('title');
+    console.log(el);
+
+    // class가 text인 모든 요소를 찾아 콘솔에 출력하기
+    const classEl = document.getElementsByClassName('text');
+    console.log(classEl);
+
+    // 모든 p 태그를 찾아 콘솔에 출력하기
+    const tagEls = document.getElementsByTagName('h1');
+    console.log(tagEls);
+
+
+    // box-1 클래스를 가진 노드 선택
+    //console.log(document.querySelector(".box-1"));
+
+    // box-1 클래스를 가진 노드의 자식 노드 중에 text 클래스를 가진 노드 선택
+    console.log(document.querySelectorAll(".box-2 .cs-text1"));
+
+    // 텍스트 가져오기
+    // const paragraph = document.getElementById('myParagraph');
+    // console.log(paragraph.textContent);  // "Hello, JavaScript!"
+    // console.log(paragraph.innerText);     // "Hello,"
+    // console.log(paragraph.innerHTML);    // "Hello, <span style="display:none;">JavaScript!</span>"
+    //
+    // // 텍스트 변경하기
+    // //paragraph.textContent = "<b>안녕하세요!</b>";
+    // //paragraph.innerText = "<b>안녕하세요!</b>";
+    // paragraph.innerHTML = "<b>안녕하세요!</b>";
+
+    // const pEl = document.querySelector("p"); // p 요소 선택하기
+    // pEl.style.color = "red"; // 텍스트 색상을 빨간색으로 변경
+
+    const pEl = document.querySelector("p");
+    pEl.style.backgroundColor = "#ff0000"; // 배경색을 빨간색으로 변경
+    pEl.style.color = "#ffffff"; // 글자 색상을 흰색으로 변경
+
+    const pEl2 = document.querySelector("#text"); // p 요소 선택
+    pEl2.classList.add("red-color"); // red-color 클래스 추가
+    pEl2.classList.add("fz40"); // fz40 클래스 추가
+
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach( el => {
+      console.log(el.dataset);
+    } );
+
+    document.querySelectorAll("li").forEach(item => {
+      item.addEventListener("click", function () {
+        document.body.style.backgroundColor = this.dataset.colorfff;
+      });
+    });
+
+    const link = document.querySelector("a");
+
+    // href 속성 값 가져오기
+    const originalHref = link.getAttribute("href");
+    console.log(originalHref); // 출력: https://www.example.com
+
+    // href 속성 값 변경
+    link.setAttribute("href", "https://www.newlink.com");
+
+    // href 속성 삭제
+    link.removeAttribute("href");
+
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

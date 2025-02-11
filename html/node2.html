@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>node</title>
+</head>
+<body>
+
+<!--  myDiv 아이디를 가진 div 태그 안에 새로운 노드를 추가하고,-->
+<!--  <a> 태그에 href="https://example.co.kr" 속성을 추가-->
+  <div id="myDiv">
+
+  </div>
+<!--  <div id="myDiv">-->
+<!--    <p>p태그 안에 입력될 텍스트</p>-->
+<!--  </div> 이것과 같음.-->
+
+  <p id ="text">삭제 대상 태그</p>
+
+  <script>
+    const element = document.createElement('p');//p노드 생성
+    const textNode = document.createTextNode("p태그 안에 입력될 텍스트");//텍스트노드 생성
+    element.appendChild(textNode);//텍스트노드를 p태그에 연결
+
+    const myDiv = document.getElementById('myDiv');
+    myDiv.appendChild(element);
+
+    // p 태그 노드 삭제
+    const pElement = document.getElementById("text");
+    pElement.parentNode.removeChild(pElement);
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>form</title>
+</head>
+<body>
+
+  <form name="frm1">
+    <label for="uname">이름</label>
+    <input type="text" id="uname" name="uname">
+    <label for="age">나이</label>
+    <input type="text" id="age" name="age">
+    <label for="gender">성별</label>
+    <select id="gender" name="gender">
+      <option value="male">남성</option>
+      <option value="female">여성</option>
+    </select>
+    <textarea id="myTextArea" name="myTextArea"></textarea>
+    <label for="myCheckbox">checkbox</label>
+    <input type="checkbox" id="myCheckbox" name="myCheckbox" value="apple" checked>
+    <button type="submit">전송</button>
+  </form>
+
+  <form name="frm2">
+    <label><input type="radio" name="fruits" value="apple">사과</label>
+    <label><input type="radio" name="fruits" value="banana">바나나</label>
+    <label><input type="radio" name="fruits" value="orange">오렌지</label>
+    <label><input type="radio" name="fruits" value="melon" checked>멜론</label>
+  </form>
+
+  <form name="frm3">
+    <select>
+      <option value="apple">사과</option>
+      <option value="banana" selected>바나나</option>
+      <option value="orange">오렌지</option>
+      <option value="melon">멜론</option>
+    </select>
+  </form>
+
+  <form name="frm4">
+    <input type="file" id="file" name="upload">
+  </form>
+
+
+
+  <script>
+  // // uname이라는 name을 가진 input 요소를 가져옴
+  // document.frm1.elements[0];
+  // // 혹은 아래와 같이 이름으로도 가져올 수 있음
+  // document.frm1.elements['uname'];
+
+  // console.log(document.frm1.elements);
+  // console.log(document.frm1.elements['uname']);
+  // console.log(document.frm1.elements[3]);
+
+  document.frm1.uname.value = "이름을 입력하세요.";
+  document.frm1.age.value = "20";
+
+  document.getElementById("myTextArea").value = "설정된 값";
+  //document.frm1.myTextArea.value = "이것도 가능합니다.";
+
+  const myCheckBox = document.getElementById("myCheckbox");
+  console.log(myCheckBox.value);
+  if (myCheckBox.checked === true) {
+    console.log(myCheckBox.value);
+  }
+
+  const radios = document.querySelectorAll('[type="radio"]');
+  // 반복문을 통해 각 라디오 버튼을 순회하며 checked 속성을 확인합니다.
+  for (let i = 0; i < radios.length; i++) {
+    if (radios[i].checked === true) {
+      console.log(radios[i].value);  // 만약 checked 속성이 true이면 해당 라디오 버튼의 value 속성 값을 콘솔에 출력합니다.
+    }
+  }
+
+  const options = document.querySelectorAll('option');
+
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].value === 'melon') {
+      options[i].selected = true;  // option의 값이 melon인 경우 selected 속성을 true로 설정
+    }
+  }
+
+  const filesObj = document.frm4.upload.files;
+  console.log(filesObj);
+
+  const files = document.frm4.upload.files;
+
+  files[0].name; // 파일 이름
+  files[0].size; // 파일 크기
+  files[0].type; // 파일 타입
+  files[0].lastModified; // 파일 마지막 수정일
+
+
+  </script>
+
+
+
+</body>
+</html>
